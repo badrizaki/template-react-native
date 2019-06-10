@@ -10,7 +10,7 @@ import {
     TextInput
 } from "react-native";
 
-import StyleMain from "../../assets/style/Main";
+import StyleAuth from "../../assets/style/Auth";
 import Logo from "../../components/Logo";
 import {Actions} from "react-native-router-flux";
 
@@ -43,12 +43,12 @@ export default class Login extends Component<{}> {
 
     render() {
         return (
-            <View style={StyleMain.container}>
+            <View style={StyleAuth.container}>
                 <Logo/>
 
-                <View style={StyleMain.container}>
+                <View style={StyleAuth.container}>
                     <TextInput
-                        style={StyleMain.inputBox}
+                        style={StyleAuth.inputBox}
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholder="Email"
                         placeholderTextColor="#ffffff"
@@ -58,7 +58,7 @@ export default class Login extends Component<{}> {
                     />
 
                     <TextInput
-                        style={StyleMain.inputBox}
+                        style={StyleAuth.inputBox}
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholder="Password"
                         secureTextEntry={true}
@@ -67,18 +67,18 @@ export default class Login extends Component<{}> {
                     />
 
                     <TouchableOpacity
-                        style={StyleMain.button}
+                        style={StyleAuth.button}
                         onPress={this.handlePress.bind(this)}
                     >
-                        <Text style={StyleMain.buttonText}>Login</Text>
+                        <Text style={StyleAuth.buttonText}>Login</Text>
                     </TouchableOpacity>
                 </View>
 
-                <View style={StyleMain.signupTextCont}>
-                    <Text style={StyleMain.signupText}>Dont have an account yet?</Text>
+                <View style={StyleAuth.signupTextCont}>
+                    <Text style={StyleAuth.signupText}>Dont have an account yet?</Text>
 
                     <TouchableOpacity onPress={this.signup}>
-                        <Text style={StyleMain.signupButton}> Signup</Text>
+                        <Text style={StyleAuth.signupButton}> Signup</Text>
                     </TouchableOpacity>
                 </View>
             </View>
