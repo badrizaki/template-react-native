@@ -10,6 +10,7 @@ import {
     TextInput
 } from "react-native";
 
+import Main from "../assets/style/Main";
 import Logo from "../components/Logo";
 import {Actions} from "react-native-router-flux";
 
@@ -42,12 +43,12 @@ export default class Login extends Component<{}> {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={Main.container}>
                 <Logo/>
 
-                <View style={styles.container}>
+                <View style={Main.container}>
                     <TextInput
-                        style={styles.inputBox}
+                        style={Main.inputBox}
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholder="Email"
                         placeholderTextColor="#ffffff"
@@ -57,7 +58,7 @@ export default class Login extends Component<{}> {
                     />
 
                     <TextInput
-                        style={styles.inputBox}
+                        style={Main.inputBox}
                         underlineColorAndroid="rgba(0,0,0,0)"
                         placeholder="Password"
                         secureTextEntry={true}
@@ -66,72 +67,21 @@ export default class Login extends Component<{}> {
                     />
 
                     <TouchableOpacity
-                        style={styles.button}
+                        style={Main.button}
                         onPress={this.handlePress.bind(this)}
                     >
-                        <Text style={styles.buttonText}>Login</Text>
+                        <Text style={Main.buttonText}>Login</Text>
                     </TouchableOpacity>
                 </View>
 
-                <View style={styles.signupTextCont}>
-                    <Text style={styles.signupText}>Dont have an account yet?</Text>
+                <View style={Main.signupTextCont}>
+                    <Text style={Main.signupText}>Dont have an account yet?</Text>
 
                     <TouchableOpacity onPress={this.signup}>
-                        <Text style={styles.signupButton}> Signup</Text>
+                        <Text style={Main.signupButton}> Signup</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    inputBox: {
-        width: 300,
-        backgroundColor: "rgba(255, 255,255,0.2)",
-        borderRadius: 25,
-        paddingHorizontal: 16,
-        fontSize: 16,
-        color: "#ffffff",
-        marginVertical: 10
-    },
-
-    button: {
-        width: 300,
-        backgroundColor: "#1c313a",
-        borderRadius: 25,
-        marginVertical: 10,
-        paddingVertical: 13
-    },
-
-    buttonText: {
-        fontSize: 16,
-        fontWeight: "500",
-        color: "#ffffff",
-        textAlign: "center"
-    },
-
-    container: {
-        backgroundColor: "#455a64",
-        flex: 1,
-        flexGrow: 1,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    signupTextCont: {
-        flexGrow: 1,
-        alignItems: "flex-end",
-        justifyContent: "center",
-        paddingVertical: 16,
-        flexDirection: "row"
-    },
-    signupText: {
-        color: "rgba(255,255,255,0.6)",
-        fontSize: 16
-    },
-    signupButton: {
-        color: "#ffffff",
-        fontSize: 16,
-        fontWeight: "500"
-    }
-});
