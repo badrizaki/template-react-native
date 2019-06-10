@@ -8,8 +8,8 @@ import {
   TouchableOpacity
 } from "react-native";
 
-import Logo from "../components/Logo";
-import Form from "../components/Form";
+import Logo from "../../components/Logo";
+import Form from "../../components/Form";
 import { Actions } from "react-native-router-flux";
 
 export default class Signup extends Component<{}> {
