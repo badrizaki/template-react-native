@@ -2,34 +2,22 @@ import React, {Component} from "react";
 
 import {
     Text,
-    View,
-    ScrollView
+    View
 } from "react-native";
 
 import StyleMain from "../../assets/style/Main";
-import {
-    widthPercentageToDP as wp,
-    heightPercentageToDP as hp,
-    listenOrientationChange as loc,
-    removeOrientationListener as rol
-} from 'react-native-responsive-screen';
-import Logo from "../../components/Logo";
+import ImageSlider from 'react-native-image-slider';
 
 export default class Home extends Component<{}> {
     render() {
         return (
             <View style={StyleMain.container}>
-                <ScrollView pagingEnabled={true} horizontal={true}>
-                    <View style={{ backgroundColor:'pink', width: wp('90%'), marginStart: wp('5%') }}>
-                        <Text>Child a</Text>
-                    </View>
-                    <View style={{ backgroundColor:'green', width: wp('90%'), marginStart: wp('5%') }}>
-                        <Text>Child b</Text>
-                    </View>
-                    <View style={{ backgroundColor:'pink', width: wp('90%'), marginStart: wp('5%') }}>
-                        <Text>Child c</Text>
-                    </View>
-                </ScrollView>
+                <ImageSlider images={[
+                    'https://placeimg.com/640/640/nature',
+                    'https://placeimg.com/640/640/people',
+                    'https://placeimg.com/640/640/animals',
+                    'https://placeimg.com/640/640/beer'
+                ]}/>
 
                 <View>
 
